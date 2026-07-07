@@ -1,0 +1,27 @@
+{
+  "name": "workshop",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "test": "vitest run",
+    "lint": "eslint src/",
+    "dev": "node --env-file=.env --import tsx/esm src/demo/server.ts"
+  },
+  "dependencies": {
+    "jose": "latest",
+    "react": "latest"
+  },
+  "devDependencies": {
+    "@eslint/js": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "eslint": "latest",
+    "playwright": "^1.61.1",
+    "tsx": "latest",
+    "typescript": "latest",
+    "typescript-eslint": "latest",
+    "vitest": "latest"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "demo": {
+    "enabled": true,
+    "port": 3001,
+    "baseUrl": "http://localhost:3001"
+  },
+  "auth": {
+    "protocol": "oidc",
+    "callbackPath": "/auth/callback",
+    "scopes": "openid profile email",
+    "authorizationEndpoint": "https://login.microsoftonline.com/${AUTH_TENANT_ID}/oauth2/v2.0/authorize",
+    "tokenEndpoint": "https://login.microsoftonline.com/${AUTH_TENANT_ID}/oauth2/v2.0/token",
+    "jwksUri": "https://login.microsoftonline.com/${AUTH_TENANT_ID}/discovery/v2.0/keys",
+    "issuer": "https://login.microsoftonline.com/${AUTH_TENANT_ID}/v2.0",
+    "session": {
+      "cookieName": "app_session",
+      "ttlSeconds": 28800
+    }
+  }
+}
