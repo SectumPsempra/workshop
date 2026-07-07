@@ -46,9 +46,10 @@ Execute these steps **in order**. Read the skill file before executing each step
 │  4.5   verify-local      → if config.demo.enabled               │
 │  5.    run-acceptance-gate → PASS or ESCALATE (max 3 cycles)   │
 │           ↓ [only if PASS]                                      │
+│  5.5   document-feature  → report + screenshots (if demo)      │
 │  6.    create-pr         → commit + branch + PR                 │
 │           ↓                                                     │
-│  OUTPUT: PR URL                                                 │
+│  OUTPUT: PR URL + report                                        │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -186,6 +187,15 @@ Read `.agents/skills/run-acceptance-gate/SKILL.md` and evaluate the full MUST ch
 
 ---
 
+## Step 5.5 — document-feature
+
+Read `.agents/skills/document-feature/SKILL.md` and execute it.
+
+Writes `docs/reports/<feature>.md` from `loop_state` and captures demo screenshots when
+`demo.enabled`. Update `loop_state.report_path` and `loop_state.screenshots`.
+
+---
+
 ## Step 6 — create-pr
 
 Read `.agents/skills/create-pr/SKILL.md` and execute it.
@@ -194,6 +204,7 @@ The PR body must include:
 - The task description (verbatim)
 - The acceptance criteria from Step 1 with pass/fail status
 - The gate result (cycles used)
+- A link to `loop_state.report_path` (the delivery report)
 - "Test locally" section when `loop_state.demo_wired = true`
 
 **Return the PR URL as the final output of the loop.**
@@ -217,6 +228,8 @@ loop_state:
   local_verify:          PASS | SKIP | SKIP_MANUAL | FAIL
   gate_result:           PASS | ESCALATE
   gate_cycles:           [1–3]
+  report_path:           [docs/reports/<feature>.md from document-feature]
+  screenshots:           [list of captured files, or empty]
   pr_url:                [final output]
 ```
 

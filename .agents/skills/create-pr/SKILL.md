@@ -81,6 +81,7 @@ the PR body:
   - **Why** the change matters (user problem or compliance driver).
   - **What** the user can now do (behaviour summary before implementation details).
   - Implementation details concisely after the behaviour summary.
+- When `loop_state.report_path` is set, add a line linking it: `📄 Delivery report: <report_path>`.
 - When `loop_state.demo_wired` is `true`, add a `### Test locally` subsection:
 
 ```markdown

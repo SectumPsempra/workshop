@@ -68,6 +68,9 @@ Task description
  [run-acceptance-gate]    → gate result: PASS or ESCALATE
       │
       ▼
+ [document-feature]       → delivery report + screenshots (when demo.enabled)
+      │
+      ▼
  [create-pr]              → conventional commit + GitHub PR
 ```
 
@@ -123,6 +126,7 @@ into `config.json`, not stored as committed preset files.
 | 4 | `write-tests` | `.agents/skills/write-tests/SKILL.md` | Tests mapped to acceptance criteria |
 | 4.5 | `verify-local` | `.agents/skills/verify-local/SKILL.md` | Smoke test against demo server (when `demo.enabled`) |
 | 5 | `run-acceptance-gate` | `.agents/skills/run-acceptance-gate/SKILL.md` | MUST checklist before commit |
+| 5.5 | `document-feature` | `.agents/skills/document-feature/SKILL.md` | Delivery report + screenshots (when `demo.enabled`) |
 | 6 | `create-pr` | `.agents/skills/create-pr/SKILL.md` | Conventional commit + GitHub PR |
 
 ### Feature-specific implement skills
