@@ -43,7 +43,8 @@ Live Azure AD sign-in requires real `.env` credentials → manual step after fil
 Captured in offline `local` mode (no credentials rendered):
 
 ![Login](./sso-auth/01-login.png)
-![Dashboard](./sso-auth/02-dashboard.png)
+![Dashboard](./sso-auth/02-dashboard.png) (Local mode)
+![Dashboard](./sso-auth/03-dashboard-oidc.png) (OIDC enabled)
 
 ## Files changed
 
